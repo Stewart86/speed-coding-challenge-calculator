@@ -44,6 +44,10 @@ Placeholder and initial design structure of calculator
 
 End of lunch break
 
+### 13:44
+
+Entering numbers with button
+
 
 
 
