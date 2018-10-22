@@ -38,7 +38,11 @@ Remove defaults from create-react-app and use Material UI for placeholder
 
 ### 11:56
 
-Placeholder and initial design structure of calculator 
+Placeholder and initial design structure of calculator
+
+### 13:18
+
+End of lunch break
 
 
 
