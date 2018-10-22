@@ -54,6 +54,11 @@ Entering numbers with button
 
 Implemented single digit addtitive operation
 
+### 4:20
+
+Implemented multiple digits addtitive operation
+
+
 
 
 

@@ -10,7 +10,7 @@ export default class Calculator extends Component {
   state = {
     current: "0",
     memory: null,
-    operating: NaN
+    operating: false
   };
 
   handlecurrent = newNumber => {
@@ -19,29 +19,31 @@ export default class Calculator extends Component {
         current: `${newNumber}`
       });
     } else if (this.state.operating) {
+        console.log("operating")
       this.setState({
-        current: `${newNumber}`
+        current: `${newNumber}`,
+        operating: false
       });
     } else if (this.state.operating === false) {
+        console.log("not operating")
       this.setState({
-        current: `${newNumber}`
+        current: `${this.state.current}${newNumber}`
       });
     }
   };
 
   handleAddOperation = () => {
-    this.setState({
-      operating: true
-    });
     if (this.state.memory === null) {
         this.setState({
             memory: this.state.current,
-            current: `+${this.state.current}`
+            current: `+${this.state.current}`,
+            operating: true
         })
     } else {
         this.setState({
             current: `${parseFloat(this.state.memory) + parseFloat(this.state.current)}`,
-            memory: `${parseFloat(this.state.memory) + parseFloat(this.state.current)}`
+            memory: `${parseFloat(this.state.memory) + parseFloat(this.state.current)}`,
+            operating: true
         })
     }
     
