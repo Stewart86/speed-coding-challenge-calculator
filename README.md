@@ -36,6 +36,10 @@ Install Meterial UI dependency and Update `index.html` to use Roboto fonts
 
 Remove defaults from create-react-app and use Material UI for placeholder
 
+### 11:56
+
+Placeholder and initial design structure of calculator 
+
 
 
 
