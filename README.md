@@ -32,6 +32,10 @@ Initailise Create-react-app and updated this readme.
 
 Install Meterial UI dependency and Update `index.html` to use Roboto fonts
 
+### 11:42
+
+Remove defaults from create-react-app and use Material UI for placeholder
+
 
 
 
