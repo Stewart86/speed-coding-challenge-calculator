@@ -28,6 +28,16 @@ Git commits were also done as a secondary method to monitoring the timeline
 
 Initailise Create-react-app and updated this readme.
 
+### 11:32
+
+Install Meterial UI dependency and Update `index.html` to use Roboto fonts
+
+
+
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
