@@ -58,6 +58,13 @@ Implemented single digit addtitive operation
 
 Implemented multiple digits addtitive operation
 
+### unknown
+
+1.5 hours break during some errands
+
+break at 6pm
+
+Implemented subjective operation
 
 
 

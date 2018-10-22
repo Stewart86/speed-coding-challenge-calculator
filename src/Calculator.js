@@ -10,6 +10,8 @@ export default class Calculator extends Component {
   state = {
     current: "0",
     memory: null,
+    memory2: null,
+    operationMemory: null,
     operating: false
   };
 
@@ -19,38 +21,49 @@ export default class Calculator extends Component {
         current: `${newNumber}`
       });
     } else if (this.state.operating) {
-        console.log("operating")
+      console.log("operating");
       this.setState({
         current: `${newNumber}`,
         operating: false
       });
     } else if (this.state.operating === false) {
-        console.log("not operating")
+      console.log("not operating");
       this.setState({
         current: `${this.state.current}${newNumber}`
       });
     }
   };
 
-  handleAddOperation = () => {
+  handleOperation = operator => {
     if (this.state.memory === null) {
+      this.setState({
+        memory: `${this.state.current}`,
+        current: `${operator}${this.state.current}`,
+        operationMemory: `${operator}`,
+        operating: true
+      });
+    } else if (this.state.memory) {
+      this.setState({
+        memory2: `${this.state.current}`,
+        current: `${operator}${this.state.current}`,
+        operationMemory: `${operator}`,
+        operating: true
+      });
+    } else if (this.state.memory && this.state.memory2) {
+      if (this.state.operationMemory === "+") {
         this.setState({
-            memory: this.state.current,
-            current: `+${this.state.current}`,
-            operating: true
-        })
-    } else {
-        this.setState({
-            current: `${parseFloat(this.state.memory) + parseFloat(this.state.current)}`,
-            memory: `${parseFloat(this.state.memory) + parseFloat(this.state.current)}`,
-            operating: true
-        })
+          current: `+${parseFloat(this.state.memory) +
+            parseFloat(this.state.memory2)}`,
+          memory: `${this.state.memory2}`,
+          memory2: `${parseFloat(this.state.memory) +
+            parseFloat(this.state.memory2)}`,
+          operationMemory: "+",
+          operating: true
+        });
+      } else if (this.state.operationMemory === "-") {
+        console.log("minus pressed")
+      }
     }
-    
-    console.group(" after states");
-    console.log("current", this.state.current);
-    console.log("operating", this.state.operating);
-    console.log("memory", this.state.memory);
   };
 
   render() {
@@ -60,7 +73,8 @@ export default class Calculator extends Component {
         <Grid item sm>
           <Paper elevation={10} style={{ backgroundColor: "darkgray" }}>
             {"number" + this.state.current} <br />
-            {"memory" + this.state.memory}
+            {"memory1" + this.state.memory} <br />
+            {"memory2" + this.state.memory2}
             <TextField
               value={this.state.current}
               margin="dense"
@@ -102,7 +116,7 @@ export default class Calculator extends Component {
                 <Button onClick={() => this.handlecurrent(3)}>3</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button>-</Button>
+                <Button onClick={() => this.handleOperation("-")}>-</Button>
               </Grid>
               <Grid item sm={3}>
                 <Button onClick={() => this.handlecurrent(0)}>0</Button>
@@ -114,7 +128,7 @@ export default class Calculator extends Component {
                 <Button>=</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handleAddOperation()}>+</Button>
+                <Button onClick={() => this.handleOperation("+")}>+</Button>
               </Grid>
             </Grid>
           </Paper>
