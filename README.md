@@ -48,6 +48,12 @@ End of lunch break
 
 Entering numbers with button
 
+### 15:57
+
+1 hour break during phone interview
+
+Implemented single digit addtitive operation
+
 
 
 

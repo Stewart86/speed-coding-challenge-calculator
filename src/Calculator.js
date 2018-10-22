@@ -8,22 +8,47 @@ export default class Calculator extends Component {
   };
 
   state = {
-    numbers: "0"
+    current: "0",
+    memory: null,
+    operating: NaN
   };
 
-  handleNumbers = newNumber => {
-    console.log("test", newNumber);
-    if (this.state.numbers === "0") {
-      console.log("if 0");
+  handlecurrent = newNumber => {
+    if (this.state.current === "0") {
       this.setState({
-        numbers: `${newNumber}`
+        current: `${newNumber}`
       });
-    } else {
-         this.setState({
-      numbers: `${this.state.numbers}${newNumber}`
-    });
+    } else if (this.state.operating) {
+      this.setState({
+        current: `${newNumber}`
+      });
+    } else if (this.state.operating === false) {
+      this.setState({
+        current: `${newNumber}`
+      });
     }
-   
+  };
+
+  handleAddOperation = () => {
+    this.setState({
+      operating: true
+    });
+    if (this.state.memory === null) {
+        this.setState({
+            memory: this.state.current,
+            current: `+${this.state.current}`
+        })
+    } else {
+        this.setState({
+            current: `${parseFloat(this.state.memory) + parseFloat(this.state.current)}`,
+            memory: `${parseFloat(this.state.memory) + parseFloat(this.state.current)}`
+        })
+    }
+    
+    console.group(" after states");
+    console.log("current", this.state.current);
+    console.log("operating", this.state.operating);
+    console.log("memory", this.state.memory);
   };
 
   render() {
@@ -32,51 +57,53 @@ export default class Calculator extends Component {
         <Grid item sm />
         <Grid item sm>
           <Paper elevation={10} style={{ backgroundColor: "darkgray" }}>
+            {"number" + this.state.current} <br />
+            {"memory" + this.state.memory}
             <TextField
-              value={this.state.numbers}
+              value={this.state.current}
               margin="dense"
               variant="outlined"
               fullWidth
             />
             <Grid container>
               <Grid item sm={3}>
-                <Button onClick={() => this.handleNumbers(7)}>7</Button>
+                <Button onClick={() => this.handlecurrent(7)}>7</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handleNumbers(8)}>8</Button>
+                <Button onClick={() => this.handlecurrent(8)}>8</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handleNumbers(9)}>9</Button>
+                <Button onClick={() => this.handlecurrent(9)}>9</Button>
               </Grid>
               <Grid item sm={3}>
                 <Button>/</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handleNumbers(4)}>4</Button>
+                <Button onClick={() => this.handlecurrent(4)}>4</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handleNumbers(5)}>5</Button>
+                <Button onClick={() => this.handlecurrent(5)}>5</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handleNumbers(6)}>6</Button>
+                <Button onClick={() => this.handlecurrent(6)}>6</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button>X</Button>
+                <Button>x</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handleNumbers(1)}>1</Button>
+                <Button onClick={() => this.handlecurrent(1)}>1</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handleNumbers(2)}>2</Button>
+                <Button onClick={() => this.handlecurrent(2)}>2</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handleNumbers(3)}>3</Button>
+                <Button onClick={() => this.handlecurrent(3)}>3</Button>
               </Grid>
               <Grid item sm={3}>
                 <Button>-</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handleNumbers(0)}>0</Button>
+                <Button onClick={() => this.handlecurrent(0)}>0</Button>
               </Grid>
               <Grid item sm={3}>
                 <Button>.</Button>
@@ -85,7 +112,7 @@ export default class Calculator extends Component {
                 <Button>=</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button>+</Button>
+                <Button onClick={() => this.handleAddOperation()}>+</Button>
               </Grid>
             </Grid>
           </Paper>
