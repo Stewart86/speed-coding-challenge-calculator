@@ -15,7 +15,21 @@ export default class Calculator extends Component {
     operating: false
   };
 
-  handlecurrent = newNumber => {
+  handleClearCurrent = () => {
+    this.setState({
+      current: "0"
+    })
+  }
+
+  handleAllClear = () => {
+    this.setState({
+      current: "0",
+      memory: null,
+      operating: false
+    })
+  }
+
+  handleCurrent = newNumber => {
     if (this.state.current === "0") {
       this.setState({
         current: `${newNumber}`
@@ -81,6 +95,7 @@ export default class Calculator extends Component {
       }
     }
 
+   
     // if (this.state.memory === null) {
     //   this.setState({
     //     memory: `${this.state.current}`,
@@ -131,44 +146,56 @@ export default class Calculator extends Component {
               fullWidth
             />
             <Grid container>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handlecurrent(7)}>7</Button>
+            <Grid item sm={3}>
+                <Button onClick={() => this.handleClearCurrent()}>CE</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handlecurrent(8)}>8</Button>
+                <Button onClick={() => this.handleAllClear()}>AC</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handlecurrent(9)}>9</Button>
+                
+              </Grid>
+              <Grid item sm={3}>
+                
+              </Grid>
+              <Grid item sm={3}>
+                <Button onClick={() => this.handleCurrent(7)}>7</Button>
+              </Grid>
+              <Grid item sm={3}>
+                <Button onClick={() => this.handleCurrent(8)}>8</Button>
+              </Grid>
+              <Grid item sm={3}>
+                <Button onClick={() => this.handleCurrent(9)}>9</Button>
               </Grid>
               <Grid item sm={3}>
                 <Button onClick={() => this.handleOperation("/")}>/</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handlecurrent(4)}>4</Button>
+                <Button onClick={() => this.handleCurrent(4)}>4</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handlecurrent(5)}>5</Button>
+                <Button onClick={() => this.handleCurrent(5)}>5</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handlecurrent(6)}>6</Button>
+                <Button onClick={() => this.handleCurrent(6)}>6</Button>
               </Grid>
               <Grid item sm={3}>
                 <Button onClick={() => this.handleOperation("x")}>x</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handlecurrent(1)}>1</Button>
+                <Button onClick={() => this.handleCurrent(1)}>1</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handlecurrent(2)}>2</Button>
+                <Button onClick={() => this.handleCurrent(2)}>2</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handlecurrent(3)}>3</Button>
+                <Button onClick={() => this.handleCurrent(3)}>3</Button>
               </Grid>
               <Grid item sm={3}>
                 <Button onClick={() => this.handleOperation("-")}>-</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button onClick={() => this.handlecurrent(0)}>0</Button>
+                <Button onClick={() => this.handleCurrent(0)}>0</Button>
               </Grid>
               <Grid item sm={3}>
                 <Button>.</Button>

@@ -70,7 +70,12 @@ break at 10:43
 
 resume at 11:45
 
-Implemented subjective operation
+Implemented all operations for single use
+
+### 11:53
+
+add CE and AC for easy resetting numbers to ease debugging and feature implementation
+
 
 
 
