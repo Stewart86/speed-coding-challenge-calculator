@@ -18,7 +18,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## Introduction
 
-Due to a gap in between interviews and doing interviews' assignments, I have decided to work on a mini challenge for myself. I tried writing a calculator app with React.js in the shortest amount of time with my current knowledge. As I don't have any prior understanding of how to implement the logic of a calculator (with an exception that I built a console styled simple calculator with C# as the first app I built with learning how to code), this is a good opportunity to allow me to solve problems on the go and see how fast I can go to product a working calculator. This challenge is mostly to build a prototype of a calculator that can solve simple mathimatic operation such as, addition, subtraction, multiplication, and division with standard calculator function such as numbers can be computed every time an operator button is pressed.
+Due to a gap in between interviews and doing interviews' assignments, I have decided to work on a mini challenge for myself. I tried writing a calculator app with React.js in the shortest amount of time with my current knowledge. As I don't have any prior understanding on how to implement the logic of a calculator (with an exception that I built a console styled simple calculator with C# as the first app I built when learning how to code), this is a good opportunity to allow me to solve problems on the go and see how fast I can go to produce a working calculator. This challenge is mostly to build a prototype of a calculator that can solve simple mathimatic operation such as, addition, subtraction, multiplication, and division with standard calculator function such as numbers can be computed every time an operator button is pressed.
 
 The challenge is completed if the following requirements are met:
 - be able to add, substract, multiply and divide like a standard calculator
@@ -96,7 +96,7 @@ some refactoring, design and alignments
 
 ## Result
 
-In total, minus all the breaks, I took 4 hours and 56 minutes to complete
+In total, deducted all the breaks, I took 4 hours and 56 minutes to complete
 
 ## Available Scripts
 
