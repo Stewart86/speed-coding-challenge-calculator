@@ -6,6 +6,8 @@ You can find the most recent version of this guide [here](https://github.com/fac
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Timeline](#timeline)
+- [Result](#result)
 - [Available Scripts](#available-scripts)
   - [npm start](#npm-start)
   - [npm test](#npm-test)
@@ -16,27 +18,29 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## Introduction
 
-### Speed Coding Challange
+Due to a gap in between interviews and doing interviews' assignments, I have decided to work on a mini challenge for myself. I tried writing a calculator app with React.js in the shortest amount of time with my current knowledge. As I don't have any prior understanding of how to implement the logic of a calculator (with an exception that I built a console styled simple calculator with C# as the first app I built with learning how to code), this is a good opportunity to allow me to solve problems on the go and see how fast I can go to product a working calculator. This challenge is mostly to build a prototype of a calculator that can solve simple mathimatic operation such as, addition, subtraction, multiplication, and division with standard calculator function such as numbers can be computed every time an operator button is pressed.
+
+The challenge is completed if the following requirements are met:
+- be able to add, substract, multiply and divide like a standard calculator
+- operation can be repeated with computed numbers
+- presentable design
+- necessary feature of a calculator (e.g. AC and CE)
+
+### How it is documented
 
 I challanged myself on building a calculator with React.js and tracked the time I took to complete. I tried my very best to document time I took for each steps during the building process. However, as I am running a low-end PC, loading up of files and refreshing will take longer than expected.
 
-Git commits were also done as a secondary method to monitoring the timeline 
+Git commits were also done as a secondary method to monitoring the timeline
 
 ## Timeline
 
-### 11:12
+### 11:12 - 11:56 (44 minutes)
 
 Initailise Create-react-app and updated this readme.
 
-### 11:32
-
 Install Meterial UI dependency and Update `index.html` to use Roboto fonts
 
-### 11:42
-
 Remove defaults from create-react-app and use Material UI for placeholder
-
-### 11:56
 
 Placeholder and initial design structure of calculator
 
@@ -44,7 +48,7 @@ Placeholder and initial design structure of calculator
 
 break
 
-### 13:18 - 13:44
+### 13:18 - 13:44 (26 minutes)
 
 Entering numbers with button
 
@@ -52,23 +56,23 @@ Entering numbers with button
 
 break during phone interview
 
-### 15:57 - 16:20
+### 15:57 - 16:20 (23 minutes)
 
 Implemented single digit addtitive operation
 
-### 16:20 - 17:30
+### 16:20 - 17:30 
 
-1 hour break during some errands
+1 hour break running some errands
 
-### 17:30 - 18:00
+### 17:30 - 18:00 (30 minutes)
 
 Implemented multiple digits addtitive operation
 
-### 18:00
+### 18:00 - 10:00
 
 break
 
-### 10:00 - 10:43
+### 10:00 - 10:43 (43 minutes)
 
 debugging, no progress
 
@@ -76,25 +80,23 @@ debugging, no progress
 
 break
 
-### 11:45 - 11:47
+### 11:45 - 11:47 (2 minutes)
 
 Implemented all operations for single use
 
-### 11:53 - 12:30
+### 11:53 - 12:30 (37 minutes)
 
 add CE and AC for easy resetting numbers to ease debugging and feature implementation
 
-### 12:30
-
 calculator build success ready for further debug and design
 
-### 14:00
+### 12:30 - 14:00 (1 hours 30 minutes)
 
 some refactoring, design and alignments 
 
-### Total time spent
+## Result
 
-4 hours and 56 minutes
+In total, minus all the breaks, I took 4 hours and 56 minutes to complete
 
 ## Available Scripts
 
