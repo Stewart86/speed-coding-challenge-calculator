@@ -76,6 +76,10 @@ Implemented all operations for single use
 
 add CE and AC for easy resetting numbers to ease debugging and feature implementation
 
+### 12:30
+
+calculator build success ready for further debug and design
+
 
 
 
