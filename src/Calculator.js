@@ -1,6 +1,14 @@
 import React, { Component } from "react";
-import { Paper, Button, Grid, TextField } from "@material-ui/core";
+import {
+  Paper,
+  Button,
+  Grid,
+  TextField,
+  InputAdornment
+} from "@material-ui/core";
 import PropTypes from "prop-types";
+import NumberButton from "./NumberButton";
+import OperatorButton from "./OperatorButton";
 
 export default class Calculator extends Component {
   static propTypes = {
@@ -10,7 +18,7 @@ export default class Calculator extends Component {
   state = {
     current: "0",
     memory: null,
-    operationMemory: null,
+    operationMemory: "",
     operating: false
   };
 
@@ -25,7 +33,7 @@ export default class Calculator extends Component {
       current: "0",
       memory: null,
       operating: false,
-      operationMemory: null,
+      operationMemory: ""
     });
   };
 
@@ -50,30 +58,30 @@ export default class Calculator extends Component {
     if (this.state.operationMemory === "+") {
       this.setState({
         current: `${parseFloat(this.state.memory) +
-          parseFloat(this.state.current)}`,
+          parseFloat(this.state.current)}`
       });
     } else if (this.state.operationMemory === "-") {
       this.setState({
         current: `${parseFloat(this.state.memory) -
-          parseFloat(this.state.current)}`,
+          parseFloat(this.state.current)}`
       });
     } else if (this.state.operationMemory === "x") {
       this.setState({
         current: `${parseFloat(this.state.memory) *
-          parseFloat(this.state.current)}`,
+          parseFloat(this.state.current)}`
       });
     } else if (this.state.operationMemory === "/") {
       this.setState({
         current: `${parseFloat(this.state.memory) /
-          parseFloat(this.state.current)}`,
+          parseFloat(this.state.current)}`
       });
     }
     this.setState({
       memory: null,
       operating: false,
-      operationMemory: null,
-    })
-  }
+      operationMemory: ""
+    });
+  };
 
   handleOperation = operator => {
     if (!this.state.operationMemory) {
@@ -128,77 +136,102 @@ export default class Calculator extends Component {
       }
     }
   };
-
   render() {
     return (
       <Grid container>
         <Grid item sm />
         <Grid item sm>
-          <Paper elevation={10} style={{ backgroundColor: "darkgray" }}>
-            {"memory1 " + this.state.memory} <br />
-            {"operator " + this.state.operationMemory} <br />
-            <TextField
-              value={this.state.current}
-              margin="dense"
-              variant="outlined"
-              fullWidth
-            />
+          <Paper
+            elevation={24}
+            style={{
+              backgroundColor: "#424242",
+              padding: "20px",
+              width: "200px",
+              margin: "10px"
+            }}
+          >
             <Grid container>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleClearCurrent()}>CE</Button>
+              <Grid item>
+                <TextField
+                  style={{ backgroundColor: "#e0e0e0" }}
+                  value={this.state.current}
+                  margin="normal"
+                  variant="outlined"
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        {this.state.operationMemory}
+                      </InputAdornment>
+                    )
+                  }}
+                />
               </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleAllClear()}>AC</Button>
+            </Grid>
+
+            <Grid container>
+              <Grid item style={{ padding: 5 }}>
+                <Button
+                  variant="fab"
+                  mini
+                  onClick={() => this.handleClearCurrent()}
+                >
+                  CE
+                </Button>
               </Grid>
-              <Grid item sm={3} />
-              <Grid item sm={3} />
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleCurrent(7)}>7</Button>
+              <Grid item style={{ padding: 5 }}>
+                <Button
+                  variant="fab"
+                  mini
+                  onClick={() => this.handleAllClear()}
+                >
+                  AC
+                </Button>
               </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleCurrent(8)}>8</Button>
+            </Grid>
+            <Grid container>
+              <Grid item sm={10}>
+                <Grid container direction="row">
+                  <NumberButton number="7" handleCurrent={this.handleCurrent} />
+                  <NumberButton number="8" handleCurrent={this.handleCurrent} />
+                  <NumberButton number="9" handleCurrent={this.handleCurrent} />
+                  <NumberButton number="4" handleCurrent={this.handleCurrent} />
+                  <NumberButton number="5" handleCurrent={this.handleCurrent} />
+                  <NumberButton number="6" handleCurrent={this.handleCurrent} />
+                  <NumberButton number="1" handleCurrent={this.handleCurrent} />
+                  <NumberButton number="2" handleCurrent={this.handleCurrent} />
+                  <NumberButton number="3" handleCurrent={this.handleCurrent} />
+                  <NumberButton number="0" handleCurrent={this.handleCurrent} />
+                  <NumberButton number="." handleCurrent={this.handleCurrent} />
+                  <Grid item style={{ padding: 5 }}>
+                    <Button
+                      variant="fab"
+                      mini
+                      onClick={() => this.handleEqual()}
+                    >
+                      =
+                    </Button>
+                  </Grid>
+                </Grid>
               </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleCurrent(9)}>9</Button>
-              </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleOperation("/")}>/</Button>
-              </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleCurrent(4)}>4</Button>
-              </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleCurrent(5)}>5</Button>
-              </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleCurrent(6)}>6</Button>
-              </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleOperation("x")}>x</Button>
-              </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleCurrent(1)}>1</Button>
-              </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleCurrent(2)}>2</Button>
-              </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleCurrent(3)}>3</Button>
-              </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleOperation("-")}>-</Button>
-              </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleCurrent(0)}>0</Button>
-              </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleCurrent(".")}>.</Button>
-              </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleEqual()}>=</Button>
-              </Grid>
-              <Grid item sm={3}>
-                <Button onClick={() => this.handleOperation("+")}>+</Button>
+              <Grid item sm={2}>
+                <Grid container direction="column">
+                  <OperatorButton
+                    operator="/"
+                    handleOperation={this.handleOperation}
+                  />
+                  <OperatorButton
+                    operator="x"
+                    handleOperation={this.handleOperation}
+                  />
+                  <OperatorButton
+                    operator="-"
+                    handleOperation={this.handleOperation}
+                  />
+                  <OperatorButton
+                    operator="+"
+                    handleOperation={this.handleOperation}
+                  />
+                </Grid>
               </Grid>
             </Grid>
           </Paper>

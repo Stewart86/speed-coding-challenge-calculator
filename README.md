@@ -80,6 +80,10 @@ add CE and AC for easy resetting numbers to ease debugging and feature implement
 
 calculator build success ready for further debug and design
 
+### 14:00
+
+some refactoring, design and alignments 
+
 
 
 
