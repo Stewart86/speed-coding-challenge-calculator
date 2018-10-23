@@ -37,33 +37,81 @@ export default class Calculator extends Component {
   handleOperation = operator => {
     if (this.state.memory === null) {
       this.setState({
-        memory: `${this.state.current}`,
-        current: `${operator}${this.state.current}`,
-        operationMemory: `${operator}`,
+        memory: this.state.current,
         operating: true
       });
-    } else if (this.state.memory) {
-      this.setState({
-        memory2: `${this.state.current}`,
-        current: `${operator}${this.state.current}`,
-        operationMemory: `${operator}`,
-        operating: true
-      });
-    } else if (this.state.memory && this.state.memory2) {
-      if (this.state.operationMemory === "+") {
+    } else {
+      if (operator === "+") {
         this.setState({
-          current: `+${parseFloat(this.state.memory) +
-            parseFloat(this.state.memory2)}`,
-          memory: `${this.state.memory2}`,
-          memory2: `${parseFloat(this.state.memory) +
-            parseFloat(this.state.memory2)}`,
-          operationMemory: "+",
-          operating: true
+          memory: `${parseFloat(this.state.current) +
+            parseFloat(this.state.memory)}`,
+          current: `${operator}${parseFloat(this.state.current) +
+            parseFloat(this.state.memory)}`,
+            operating: true
+
         });
-      } else if (this.state.operationMemory === "-") {
-        console.log("minus pressed")
+      } else if (operator === "-") {
+        this.setState({
+          memory: `${parseFloat(this.state.current) -
+            parseFloat(this.state.memory)}`,
+          current: `${operator}${parseFloat(this.state.current) -
+            parseFloat(this.state.memory)}`,
+            operating: true
+
+        });
+      }else if (operator === "x") {
+        console.log("times")
+        this.setState({
+          memory: `${parseFloat(this.state.current) *
+            parseFloat(this.state.memory)}`,
+          current: `${operator}${parseFloat(this.state.current) *
+            parseFloat(this.state.memory)}`,
+            operating: true
+
+        });
+      }else if (operator === "/") {
+        this.setState({
+          memory: `${parseFloat(this.state.current) /
+            parseFloat(this.state.memory)}`,
+          current: `${operator}${parseFloat(this.state.current) /
+            parseFloat(this.state.memory)}`,
+            operating: true
+
+        });
       }
     }
+
+    // if (this.state.memory === null) {
+    //   this.setState({
+    //     memory: `${this.state.current}`,
+    //     current: `${operator}${this.state.current}`,
+    //     operationMemory: `${operator}`,
+    //     operating: true
+    //   });
+    // } else if (this.state.memory && !this.state.memory2) {
+    //   this.setState({
+    //     memory2: `${parseFloat(this.state.current) + parseFloat(this.state.memory)}`,
+    //     current: `${operator}${parseFloat(this.state.current) + parseFloat(this.state.memory)}`,
+    //     operationMemory: `${operator}`,
+    //     operating: true
+    //   });
+    // } else if (this.state.memory2) {
+    //   console.log("both memory")
+    //   this.setState({
+    //     memory: `${parseFloat(this.state.memory2)}`,
+
+    //   })
+    //   if (this.state.operationMemory === "+") {
+    //     this.setState({
+    //       current: `+${parseFloat(this.state.memory) + parseFloat(this.state.current)}`,
+    //       memory2: `${parseFloat(this.state.memory) + parseFloat(this.state.current)}`,
+    //       operationMemory: "+",
+    //       operating: true
+    //     });
+    //   } else if (this.state.operationMemory === "-") {
+    //     console.log("minus pressed")
+    //   }
+    // }
   };
 
   render() {
@@ -73,8 +121,9 @@ export default class Calculator extends Component {
         <Grid item sm>
           <Paper elevation={10} style={{ backgroundColor: "darkgray" }}>
             {"number" + this.state.current} <br />
-            {"memory1" + this.state.memory} <br />
-            {"memory2" + this.state.memory2}
+            {"memory1 " + this.state.memory} <br />
+            {"operator " + this.state.operationMemory} <br />
+            {"memory2 " + this.state.memory2}
             <TextField
               value={this.state.current}
               margin="dense"
@@ -92,7 +141,7 @@ export default class Calculator extends Component {
                 <Button onClick={() => this.handlecurrent(9)}>9</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button>/</Button>
+                <Button onClick={() => this.handleOperation("/")}>/</Button>
               </Grid>
               <Grid item sm={3}>
                 <Button onClick={() => this.handlecurrent(4)}>4</Button>
@@ -104,7 +153,7 @@ export default class Calculator extends Component {
                 <Button onClick={() => this.handlecurrent(6)}>6</Button>
               </Grid>
               <Grid item sm={3}>
-                <Button>x</Button>
+                <Button onClick={() => this.handleOperation("x")}>x</Button>
               </Grid>
               <Grid item sm={3}>
                 <Button onClick={() => this.handlecurrent(1)}>1</Button>
