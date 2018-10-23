@@ -40,39 +40,47 @@ Remove defaults from create-react-app and use Material UI for placeholder
 
 Placeholder and initial design structure of calculator
 
-### 13:18
+### 11:56 - 13:18
 
-End of lunch break
+break
 
-### 13:44
+### 13:18 - 13:44
 
 Entering numbers with button
 
-### 15:57
+### 13:44 - 15:57
 
-1 hour break during phone interview
+break during phone interview
+
+### 15:57 - 16:20
 
 Implemented single digit addtitive operation
 
-### 4:20
+### 16:20 - 17:30
+
+1 hour break during some errands
+
+### 17:30 - 18:00
 
 Implemented multiple digits addtitive operation
 
-### 11:47
+### 18:00
 
-1.5 hours break during some errands
+break
 
-break at 6pm 
+### 10:00 - 10:43
 
-resume at 10am
+debugging, no progress
 
-break at 10:43
+### 10:43 - 11:45
 
-resume at 11:45
+break
+
+### 11:45 - 11:47
 
 Implemented all operations for single use
 
-### 11:53
+### 11:53 - 12:30
 
 add CE and AC for easy resetting numbers to ease debugging and feature implementation
 
@@ -84,12 +92,9 @@ calculator build success ready for further debug and design
 
 some refactoring, design and alignments 
 
+### Total time spent
 
-
-
-
-
-
+4 hours and 56 minutes
 
 ## Available Scripts
 
