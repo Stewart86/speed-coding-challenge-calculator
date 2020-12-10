@@ -19,8 +19,23 @@ export default class Calculator extends Component {
     current: "0",
     memory: null,
     operationMemory: "",
-    operating: false
+    operating: false,
+    theme: false,
   };
+
+  
+
+
+  toggleTheme = (e) => {
+    if(e){
+      if(this.state.theme === true){
+      return this.setState({ theme: false });      
+      }
+      if(this.state.theme === false){
+       return this.setState({ theme: true });
+      }
+    }
+  }
 
   handleClearCurrent = () => {
     this.setState({
@@ -138,16 +153,18 @@ export default class Calculator extends Component {
   };
   render() {
     return (
-      <Grid container>
+      <Grid container style={{ margin: 'auto' }}>
         <Grid item sm />
+        <button style={{ width: '75px', height: '50px', borderRadius: '10px', margin: 'auto', marginLeft: '40px'}} onClick={this.toggleTheme}>Toggle Theme</button>
         <Grid item sm>
           <Paper
             elevation={24}
             style={{
-              backgroundColor: "#424242",
+              backgroundColor: this.state.theme ? 'white' : '#424242',
               padding: "20px",
               width: "200px",
-              margin: "10px"
+              margin: "auto",
+              marginTop: '250px'
             }}
           >
             <Grid container>
