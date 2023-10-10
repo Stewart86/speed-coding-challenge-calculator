@@ -7,24 +7,25 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Timeline](#timeline)
-- [Result](#result)
-- [Available Scripts](#available-scripts)
-  - [npm start](#npm-start)
-  - [npm test](#npm-test)
-  - [npm run build](#npm-run-build)
-  - [npm run eject](#npm-run-eject)
+-   [Introduction](#introduction)
+-   [Timeline](#timeline)
+-   [Result](#result)
+-   [Available Scripts](#available-scripts)
+    -   [npm start](#npm-start)
+    -   [npm test](#npm-test)
+    -   [npm run build](#npm-run-build)
+    -   [npm run eject](#npm-run-eject)
 
 ## Introduction
 
 Due to a gap in between interviews and doing interviews' assignments, I have decided to work on a mini challenge for myself. I tried writing a calculator app with React.js in the shortest amount of time with my current knowledge. As I don't have any prior understanding on how to implement the logic of a calculator (with an exception that I built a console styled simple calculator with C# as the first app I built when learning how to code), this is a good opportunity to allow me to solve problems on the go and see how fast I can go to produce a working calculator. This challenge is mostly to build a prototype of a calculator that can solve simple mathimatic operation such as, addition, subtraction, multiplication, and division with standard calculator function such as numbers can be computed every time an operator button is pressed.
 
 The challenge is completed if the following requirements are met:
-- be able to add, substract, multiply and divide like a standard calculator
-- operation can be repeated with computed numbers
-- presentable design
-- necessary feature of a calculator (e.g. AC and CE)
+
+-   be able to add, substract, multiply and divide like a standard calculator
+-   operation can be repeated with computed numbers
+-   presentable design
+-   necessary feature of a calculator (e.g. AC and CE)
 
 ### How it is documented
 
@@ -60,7 +61,7 @@ break during phone interview
 
 Implemented single digit addtitive operation
 
-### 16:20 - 17:30 
+### 16:20 - 17:30
 
 1 hour break running some errands
 
@@ -92,7 +93,11 @@ calculator build success ready for further debug and design
 
 ### 12:30 - 14:00 (1 hours 30 minutes)
 
-some refactoring, design and alignments 
+some refactoring, design and alignments
+
+### 1:30 - 2:46 (1 hour 16 minutes)
+
+Just Built a Basic Calculator with 4 binary operations(+,-,/,\*)
 
 ## Result
 
