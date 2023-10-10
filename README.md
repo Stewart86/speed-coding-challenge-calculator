@@ -98,6 +98,15 @@ some refactoring, design and alignments
 
 In total, deducted all the breaks, I took 4 hours and 56 minutes to complete
 
+## Result-2 by @adityaind
+Took approx 4 hours
+vanilla-js-calculator- live demo here: https://adityaind.github.io/vanilla-js-calculator/
+Calculator Built in Vanilla JS
+
+The functionality is Very basic
+
+Found it somewhat hard because it has lot of logic
+
 ## Available Scripts
 
 In the project directory, you can run:
